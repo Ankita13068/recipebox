@@ -1,0 +1,456 @@
+.share-recipe-page {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 5rem 3rem 2rem;
+}
+
+.share-recipe-heading {
+  max-width: 700px;
+  margin-bottom: 2.5rem;
+}
+
+.share-recipe-heading .section-title {
+  margin-bottom: 0.8rem;
+}
+
+.share-recipe-heading > p:last-child {
+  max-width: 560px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.share-recipe-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  align-items: start;
+  gap: 2rem;
+}
+
+.share-recipe-form {
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid var(--border-color);
+  background: var(--soft-white);
+}
+
+.share-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem 1.2rem;
+}
+
+.share-field {
+  min-width: 0;
+  border: 0;
+}
+
+.share-field--wide {
+  grid-column: 1 / -1;
+}
+
+.share-field > label,
+.share-diet-field legend,
+.share-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--deep-forest);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.share-field input:not([type="radio"]):not([type="file"]),
+.share-field textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  background: #fff;
+  color: var(--text-dark);
+  font-size: 0.82rem;
+}
+
+.share-field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.share-field input:focus,
+.share-field textarea:focus {
+  border-color: var(--sage-green);
+  outline: 3px solid rgba(130, 151, 124, 0.18);
+}
+
+.share-time-input {
+  position: relative;
+}
+
+.share-time-input input {
+  padding-right: 5rem !important;
+}
+
+.share-time-input span {
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.share-diet-options {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.share-diet-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.share-diet-options input {
+  accent-color: var(--deep-forest);
+}
+
+.share-field-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.share-field-heading label {
+  margin-bottom: 0;
+}
+
+.share-ingredient-fields {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.share-ingredient-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.share-ingredient-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.share-remove-ingredient {
+  width: 44px;
+  flex: 0 0 44px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+.share-text-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--deep-forest);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.share-photo-uploader {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1rem;
+  border: 1px dashed #b6bcae;
+  background: var(--warm-cream);
+}
+
+.share-photo-uploader > img {
+  width: 150px;
+  height: 110px;
+  object-fit: cover;
+  background: var(--muted-beige);
+}
+
+.share-photo-uploader strong {
+  color: var(--deep-forest);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.share-photo-uploader p {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+}
+
+.share-photo-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.share-photo-input:focus-visible + .share-photo-button {
+  outline: 3px solid rgba(130, 151, 124, 0.55);
+  outline-offset: 3px;
+}
+
+.share-photo-button {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--deep-forest);
+  background: var(--deep-forest);
+  color: var(--soft-white);
+  font-size: 0.68rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.share-photo-button:hover {
+  border-color: var(--sage-green);
+  background: var(--sage-green);
+}
+
+.share-photo-remove {
+  margin-left: 0.8rem;
+}
+
+.share-field-error {
+  margin-top: 0.5rem !important;
+  color: #a23e35 !important;
+  font-size: 0.75rem !important;
+}
+
+.share-submit-error {
+  margin-top: 1rem !important;
+}
+
+.share-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.6rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.share-form-footer > p {
+  max-width: 320px;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+}
+
+.share-publish-button {
+  display: inline-flex;
+  min-height: 46px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--deep-forest);
+  background: var(--deep-forest);
+  color: var(--soft-white);
+  font-size: 0.74rem;
+  font-weight: 600;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.share-publish-button:hover:not(:disabled) {
+  border-color: var(--sage-green);
+  background: var(--sage-green);
+  transform: translateY(-2px);
+}
+
+.share-publish-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.share-recipe-preview {
+  position: sticky;
+  top: 150px;
+  padding: 1.2rem;
+  border: 1px solid var(--border-color);
+  background: var(--warm-cream);
+}
+
+.share-preview-image {
+  position: relative;
+  height: 190px;
+  margin: 1rem 0;
+  overflow: hidden;
+  background: var(--muted-beige);
+}
+
+.share-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.share-preview-image span {
+  position: absolute;
+  bottom: 0.7rem;
+  left: 0.7rem;
+  padding: 0.3rem 0.5rem;
+  background: var(--soft-white);
+  color: var(--deep-forest);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.share-preview-category {
+  color: var(--sage-green);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.share-recipe-preview h2 {
+  margin-top: 0.35rem;
+  color: var(--deep-forest);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.share-preview-meta,
+.share-preview-note {
+  margin-top: 0.55rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.share-preview-note {
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border-color);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.share-storage-message,
+.share-success-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border-color);
+  font-size: 0.78rem;
+}
+
+.share-storage-message {
+  border-color: #d7aaa2;
+  background: #fff5f2;
+  color: #8c332b;
+}
+
+.share-success-message {
+  border-color: #c4cfbd;
+  background: #f0f4ed;
+  color: var(--deep-forest);
+}
+
+.share-success-message button {
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--deep-forest);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .share-recipe-page {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .share-recipe-layout {
+    grid-template-columns: minmax(0, 1fr) 250px;
+    gap: 1rem;
+  }
+
+  .share-preview-image {
+    height: 160px;
+  }
+}
+
+@media (max-width: 700px) {
+  .share-recipe-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .share-recipe-preview {
+    position: static;
+    grid-row: 1;
+  }
+
+  .share-preview-image {
+    height: 220px;
+  }
+}
+
+@media (max-width: 520px) {
+  .share-recipe-page {
+    padding: 3.5rem 1rem 1.5rem;
+  }
+
+  .share-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .share-field--wide {
+    grid-column: auto;
+  }
+
+  .share-photo-uploader {
+    grid-template-columns: 1fr;
+  }
+
+  .share-photo-uploader > img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .share-form-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .share-publish-button {
+    width: 100%;
+  }
+
+  .share-success-message {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

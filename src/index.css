@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #1f2820;
+  background: #fffdf8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --sage-green: #82977c;
+  --deep-forest: #344b38;
+  --warm-cream: #f5f3eb;
+  --soft-white: #fffdf8;
+  --muted-beige: #e8e4d8;
+  --text-dark: #1f2820;
+  --text-muted: #73796f;
+  --border-color: #e4e1d7;
+
+  --shadow-subtle: 0 8px 24px rgba(52, 75, 56, 0.06);
+  --shadow-hover: 0 16px 32px rgba(52, 75, 56, 0.12);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--soft-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(130, 151, 124, 0.55);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+::selection {
+  color: var(--soft-white);
+  background: var(--deep-forest);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

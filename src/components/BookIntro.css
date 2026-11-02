@@ -1,0 +1,343 @@
+
+.book-intro {
+  min-height: 100vh;
+  padding: 28px 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at center, #fffdf8 0%, #f5f3eb 72%);
+  color: #344b38;
+}
+
+.intro-topline,
+.intro-bottom {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #82977c;
+  font-weight: 600;
+}
+
+.book-stage {
+  position: relative;
+  width: min(900px, 92vw);
+  height: min(570px, 65vh);
+  min-height: 390px;
+  perspective: 1800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-spread {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.8s ease 0.35s,
+    transform 0.8s ease 0.35s;
+  background: #fffdf8;
+  box-shadow: 0 25px 65px rgba(52, 75, 56, 0.16);
+}
+
+.book-page {
+  position: relative;
+  min-width: 0;
+  padding: clamp(20px, 4vw, 55px);
+  overflow: hidden;
+}
+
+.inside-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #e8e4d8;
+  background:
+    radial-gradient(circle at 5% 10%, #e8eddf 0%, transparent 30%),
+    #fffdf8;
+}
+
+.page-kicker,
+.inside-recipe-caption > span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #82977c;
+  font-weight: 700;
+}
+
+.inside-left h1 {
+  margin: 28px 0 20px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(25px, 4vw, 43px);
+  line-height: 1.2;
+  font-weight: 400;
+  color: #344b38;
+}
+
+.inside-left h1 em {
+  color: #82977c;
+  font-weight: 400;
+}
+
+.page-divider {
+  width: 45px;
+  height: 1px;
+  background: #82977c;
+  margin: 8px 0 20px;
+}
+
+.inside-left p {
+  max-width: 330px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #77796f;
+}
+
+.page-signature {
+  margin-top: 25px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: #82977c;
+  font-size: 15px;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 18px;
+  color: #a7a99e;
+  font-size: 10px;
+}
+
+.inside-left .page-number {
+  left: 30px;
+}
+
+.inside-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f5f3eb;
+}
+
+.inside-right img {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+  display: block;
+}
+
+.inside-recipe-caption {
+  padding: 17px 0 0;
+}
+
+.inside-recipe-caption h2 {
+  margin: 8px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(18px, 2.5vw, 27px);
+  color: #344b38;
+}
+
+.inside-recipe-caption p {
+  margin: 0;
+  font-size: 11px;
+  color: #77796f;
+  line-height: 1.6;
+}
+
+.inside-right .page-number {
+  right: 30px;
+}
+
+.book-cover {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 100%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 1.2s cubic-bezier(0.65, 0, 0.25, 1);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255,255,255,0.08), transparent 45%),
+    #344b38;
+  color: #f5f3eb;
+  box-shadow:
+    8px 15px 35px rgba(30, 48, 34, 0.25),
+    inset 5px 0 8px rgba(0, 0, 0, 0.13);
+  backface-visibility: hidden;
+}
+
+.cover-content {
+  height: 100%;
+  padding: 35px 15px;
+  border: 1px solid rgba(245, 243, 235, 0.3);
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-edition,
+.cover-subtitle,
+.cover-bottom {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #d7dfcf;
+}
+
+.cover-emblem {
+  font-size: 38px;
+  color: #c6d1b9;
+}
+
+.cover-content h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.cover-line {
+  width: 45px;
+  height: 1px;
+  background: #c6d1b9;
+  margin: 5px 0;
+}
+
+.cover-content p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #e8e4d8;
+}
+
+.is-opening .book-cover {
+  transform: rotateY(-165deg);
+}
+
+.is-opening .book-spread {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.open-book-button {
+  border: 1px solid #82977c;
+  background: #82977c;
+  color: #fffdf8;
+  padding: 14px 25px;
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.open-book-button:hover:not(:disabled) {
+  background: #344b38;
+  transform: translateY(-2px);
+}
+
+.open-book-button:disabled {
+  cursor: default;
+  opacity: 0.8;
+}
+
+@media (max-width: 650px) {
+  .book-intro {
+    padding: 20px 5%;
+  }
+
+  .intro-topline,
+  .intro-bottom {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .book-stage {
+    width: 96vw;
+    height: 440px;
+    min-height: 0;
+  }
+
+  .book-page {
+    padding: 17px;
+  }
+
+  .inside-left h1 {
+    font-size: 23px;
+  }
+
+  .inside-left p {
+    font-size: 10px;
+  }
+
+  .inside-right img {
+    height: 55%;
+  }
+
+  .inside-recipe-caption h2 {
+    font-size: 17px;
+  }
+
+  .inside-recipe-caption p {
+    font-size: 9px;
+  }
+
+  .cover-content {
+    margin: 7px;
+    padding: 25px 5px;
+  }
+
+  .cover-edition,
+  .cover-subtitle,
+  .cover-bottom {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .cover-content h2 {
+    font-size: 31px;
+  }
+
+  .cover-content p {
+    font-size: 12px;
+  }
+
+  .cover-emblem {
+    font-size: 28px;
+  }
+
+  .intro-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .intro-bottom > span {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-cover,
+  .book-spread,
+  .open-book-button {
+    transition-duration: 0.01ms;
+  }
+}
