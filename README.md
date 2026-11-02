@@ -135,10 +135,8 @@ embedded below so they display in the repository README.
 ### Cookbook opening
 ![RecipeBox cookbook opening](screenshots/book-intro.png)
 
-### Homepage
-![RecipeBox desktop homepage](screenshots/homepage.png)
-
-![RecipeBox mobile homepage](screenshots/mobile-homepage.png)
+### Desktop homepage
+![RecipeBox full-screen laptop homepage](screenshots/homepage.png)
 
 ### Recipe collection
 ![Recipe collection](screenshots/recipe-collection.png)
