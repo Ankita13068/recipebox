@@ -1,343 +1,550 @@
 
-.book-intro {
-  min-height: 100vh;
-  padding: 28px 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at center, #fffdf8 0%, #f5f3eb 72%);
-  color: #344b38;
-}
+/* ==========================================
+   RECIPEBOX
+   BOTANICAL EDITORIAL INTRO
+========================================== */
 
-.intro-topline,
-.intro-bottom {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: #82977c;
-  font-weight: 600;
-}
+.editorial-intro {
+  --sage: #82977c;
+  --sage-light: #c8d3bd;
+  --forest: #344b38;
+  --cream: #f5f3eb;
+  --white: #fffdf8;
+  --muted: #77796f;
+  --border: #e4e5d9;
 
-.book-stage {
-  position: relative;
-  width: min(900px, 92vw);
-  height: min(570px, 65vh);
-  min-height: 390px;
-  perspective: 1800px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.book-spread {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  opacity: 0;
-  transform: scale(0.96);
-  transition:
-    opacity 0.8s ease 0.35s,
-    transform 0.8s ease 0.35s;
-  background: #fffdf8;
-  box-shadow: 0 25px 65px rgba(52, 75, 56, 0.16);
-}
+  z-index: 9999;
 
-.book-page {
-  position: relative;
-  min-width: 0;
-  padding: clamp(20px, 4vw, 55px);
-  overflow: hidden;
-}
-
-.inside-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-right: 1px solid #e8e4d8;
-  background:
-    radial-gradient(circle at 5% 10%, #e8eddf 0%, transparent 30%),
-    #fffdf8;
-}
-
-.page-kicker,
-.inside-recipe-caption > span {
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: #82977c;
-  font-weight: 700;
-}
-
-.inside-left h1 {
-  margin: 28px 0 20px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(25px, 4vw, 43px);
-  line-height: 1.2;
-  font-weight: 400;
-  color: #344b38;
-}
-
-.inside-left h1 em {
-  color: #82977c;
-  font-weight: 400;
-}
-
-.page-divider {
-  width: 45px;
-  height: 1px;
-  background: #82977c;
-  margin: 8px 0 20px;
-}
-
-.inside-left p {
-  max-width: 330px;
-  font-size: 13px;
-  line-height: 1.9;
-  color: #77796f;
-}
-
-.page-signature {
-  margin-top: 25px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-  color: #82977c;
-  font-size: 15px;
-}
-
-.page-number {
-  position: absolute;
-  bottom: 18px;
-  color: #a7a99e;
-  font-size: 10px;
-}
-
-.inside-left .page-number {
-  left: 30px;
-}
-
-.inside-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #f5f3eb;
-}
-
-.inside-right img {
+  box-sizing: border-box;
   width: 100%;
-  height: 65%;
-  object-fit: cover;
-  display: block;
-}
+  min-height: 100vh;
+  min-height: 100svh;
 
-.inside-recipe-caption {
-  padding: 17px 0 0;
-}
+  padding: clamp(22px, 4vw, 48px) clamp(22px, 6vw, 85px);
 
-.inside-recipe-caption h2 {
-  margin: 8px 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: clamp(18px, 2.5vw, 27px);
-  color: #344b38;
-}
-
-.inside-recipe-caption p {
-  margin: 0;
-  font-size: 11px;
-  color: #77796f;
-  line-height: 1.6;
-}
-
-.inside-right .page-number {
-  right: 30px;
-}
-
-.book-cover {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 25%;
-  width: 50%;
-  height: 100%;
-  transform-origin: left center;
-  transform-style: preserve-3d;
-  transition: transform 1.2s cubic-bezier(0.65, 0, 0.25, 1);
-  background:
-    radial-gradient(circle at 50% 35%, rgba(255,255,255,0.08), transparent 45%),
-    #344b38;
-  color: #f5f3eb;
-  box-shadow:
-    8px 15px 35px rgba(30, 48, 34, 0.25),
-    inset 5px 0 8px rgba(0, 0, 0, 0.13);
-  backface-visibility: hidden;
-}
-
-.cover-content {
-  height: 100%;
-  padding: 35px 15px;
-  border: 1px solid rgba(245, 243, 235, 0.3);
-  margin: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(ellipse at 15% 15%, #e9eddf 0%, transparent 35%),
+    radial-gradient(ellipse at 90% 85%, #e9e8dc 0%, transparent 35%),
+    var(--cream);
+
+  color: var(--forest);
+
+  animation: editorialFadeIn 0.7s ease both;
+}
+
+.editorial-intro *,
+.editorial-intro *::before,
+.editorial-intro *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   BACKGROUND DECORATION
+========================================== */
+
+.editorial-orb {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.editorial-orb-one {
+  width: 350px;
+  height: 350px;
+  top: 12%;
+  right: -180px;
+  border: 1px solid rgba(130, 151, 124, 0.17);
+}
+
+.editorial-orb-two {
+  width: 250px;
+  height: 250px;
+  bottom: -130px;
+  left: -100px;
+  border: 1px solid rgba(130, 151, 124, 0.2);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.editorial-header {
+  width: 100%;
+  max-width: 1400px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 15px;
+
+  animation: editorialSlideDown 0.7s ease both;
+}
+
+.editorial-logo {
+  width: fit-content;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(23px, 2.5vw, 30px);
+  font-weight: 600;
+  letter-spacing: -1.5px;
+
+  color: var(--forest);
+  text-decoration: none;
+}
+
+.editorial-logo span {
+  color: var(--sage);
+}
+
+.editorial-header-label,
+.editorial-edition {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--sage);
+}
+
+.editorial-header-label {
   text-align: center;
 }
 
-.cover-edition,
-.cover-subtitle,
-.cover-bottom {
-  font-size: 8px;
-  letter-spacing: 2px;
-  color: #d7dfcf;
+.editorial-edition {
+  text-align: right;
 }
 
-.cover-emblem {
-  font-size: 38px;
-  color: #c6d1b9;
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.editorial-main {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+
+  margin: auto 0;
+  padding: 45px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  animation: editorialContentIn 0.9s 0.1s ease both;
 }
 
-.cover-content h2 {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(32px, 5vw, 54px);
-  font-weight: 400;
-  letter-spacing: -2px;
+/* Overline */
+
+.editorial-overline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  margin-bottom: 35px;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--sage);
 }
 
-.cover-line {
-  width: 45px;
+.editorial-line {
+  width: 35px;
   height: 1px;
-  background: #c6d1b9;
-  margin: 5px 0;
+  background: var(--sage-light);
 }
 
-.cover-content p {
+/* Main title */
+
+.editorial-heading {
+  position: relative;
+}
+
+.editorial-pretitle {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: var(--sage);
+}
+
+.editorial-heading h1 {
+  position: relative;
+  margin: 0;
+
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #e8e4d8;
+  font-size: clamp(76px, 13vw, 155px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -9px;
+
+  color: var(--forest);
 }
 
-.is-opening .book-cover {
-  transform: rotateY(-165deg);
+.editorial-heading h1 span {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sage);
 }
 
-.is-opening .book-spread {
-  opacity: 1;
-  transform: scale(1);
+.editorial-heading h1 i {
+  font-style: normal;
+  color: #bdc9ad;
 }
 
-.open-book-button {
-  border: 1px solid #82977c;
-  background: #82977c;
-  color: #fffdf8;
-  padding: 14px 25px;
-  font: inherit;
-  font-size: 12px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: background 0.25s ease, transform 0.25s ease;
-}
+/* Botanical flower */
 
-.open-book-button:hover:not(:disabled) {
-  background: #344b38;
-  transform: translateY(-2px);
-}
+.editorial-flower {
+  position: absolute;
+  top: -35px;
+  right: -55px;
 
-.open-book-button:disabled {
-  cursor: default;
+  font-size: 38px;
+  color: #a9b99d;
   opacity: 0.8;
 }
 
-@media (max-width: 650px) {
-  .book-intro {
-    padding: 20px 5%;
+/* Description */
+
+.editorial-description {
+  margin: 30px 0 0;
+
+  font-size: clamp(13px, 1.4vw, 15px);
+  line-height: 2;
+  letter-spacing: 0.3px;
+
+  color: var(--muted);
+}
+
+/* Divider */
+
+.editorial-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  width: 150px;
+  margin: 30px 0 18px;
+}
+
+.editorial-divider > span:not(.editorial-divider-flower) {
+  flex: 1;
+  height: 1px;
+  background: var(--sage-light);
+}
+
+.editorial-divider-flower {
+  font-size: 15px;
+  color: var(--sage);
+}
+
+.editorial-tagline {
+  margin: 0;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--sage);
+}
+
+/* ==========================================
+   EXPLORE BUTTON
+========================================== */
+
+.editorial-explore-button {
+  min-width: 205px;
+  margin-top: 38px;
+  padding: 15px 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border: 1px solid var(--forest);
+  border-radius: 2px;
+
+  background: var(--forest);
+  color: var(--white);
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.editorial-explore-button:hover:not(:disabled) {
+  background: transparent;
+  color: var(--forest);
+  transform: translateY(-2px);
+}
+
+.editorial-explore-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.editorial-arrow {
+  font-size: 16px;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.editorial-footer {
+  width: 100%;
+  max-width: 1400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  animation: editorialFadeIn 1s 0.3s ease both;
+}
+
+.editorial-footer > span:not(.editorial-footer-symbol) {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--sage);
+}
+
+.editorial-footer-symbol {
+  font-size: 17px;
+  color: #a9b99d;
+}
+
+/* Side label */
+
+.editorial-side-label {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #a9b99d;
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   MINIMAL ANIMATIONS
+========================================== */
+
+@keyframes editorialFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes editorialSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes editorialContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Exit transition */
+
+.editorial-intro.is-leaving {
+  animation: editorialExit 0.5s ease forwards;
+}
+
+@keyframes editorialExit {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 850px) {
+  .editorial-intro {
+    padding: 28px 5%;
   }
 
-  .intro-topline,
-  .intro-bottom {
-    font-size: 8px;
-    letter-spacing: 1px;
+  .editorial-heading h1 {
+    font-size: clamp(75px, 14vw, 115px);
   }
 
-  .book-stage {
-    width: 96vw;
-    height: 440px;
-    min-height: 0;
-  }
-
-  .book-page {
-    padding: 17px;
-  }
-
-  .inside-left h1 {
-    font-size: 23px;
-  }
-
-  .inside-left p {
-    font-size: 10px;
-  }
-
-  .inside-right img {
-    height: 55%;
-  }
-
-  .inside-recipe-caption h2 {
-    font-size: 17px;
-  }
-
-  .inside-recipe-caption p {
-    font-size: 9px;
-  }
-
-  .cover-content {
-    margin: 7px;
-    padding: 25px 5px;
-  }
-
-  .cover-edition,
-  .cover-subtitle,
-  .cover-bottom {
-    font-size: 6px;
-    letter-spacing: 1px;
-  }
-
-  .cover-content h2 {
-    font-size: 31px;
-  }
-
-  .cover-content p {
-    font-size: 12px;
-  }
-
-  .cover-emblem {
-    font-size: 28px;
-  }
-
-  .intro-bottom {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .intro-bottom > span {
+  .editorial-side-label {
     display: none;
   }
 }
 
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .editorial-intro {
+    padding: 22px 20px;
+  }
+
+  .editorial-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .editorial-header-label {
+    display: none;
+  }
+
+  .editorial-edition {
+    font-size: 8px;
+  }
+
+  .editorial-main {
+    padding: 30px 0;
+  }
+
+  .editorial-overline {
+    gap: 8px;
+    margin-bottom: 28px;
+
+    font-size: 7px;
+    letter-spacing: 1.7px;
+  }
+
+  .editorial-line {
+    width: 20px;
+  }
+
+  .editorial-pretitle {
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
+
+  .editorial-heading h1 {
+    font-size: clamp(58px, 15vw, 88px);
+    letter-spacing: -5px;
+  }
+
+  .editorial-flower {
+    top: -28px;
+    right: -23px;
+    font-size: 25px;
+  }
+
+  .editorial-description {
+    margin-top: 23px;
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .editorial-divider {
+    margin: 24px 0 15px;
+  }
+
+  .editorial-tagline {
+    font-size: 7px;
+    letter-spacing: 1.8px;
+  }
+
+  .editorial-explore-button {
+    margin-top: 30px;
+    width: min(100%, 250px);
+  }
+
+  .editorial-footer > span:not(.editorial-footer-symbol) {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .editorial-orb-one {
+    right: -250px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+  .editorial-heading h1 {
+    font-size: 55px;
+    letter-spacing: -4px;
+  }
+
+  .editorial-description {
+    font-size: 11px;
+  }
+
+  .editorial-footer > span:not(.editorial-footer-symbol) {
+    font-size: 5px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
 @media (prefers-reduced-motion: reduce) {
-  .book-cover,
-  .book-spread,
-  .open-book-button {
-    transition-duration: 0.01ms;
+  .editorial-intro,
+  .editorial-header,
+  .editorial-main,
+  .editorial-footer {
+    animation: none !important;
+  }
+
+  .editorial-explore-button {
+    transition: none;
+  }
+
+  .editorial-intro.is-leaving {
+    animation: none !important;
+    opacity: 0;
   }
 }

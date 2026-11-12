@@ -2,124 +2,100 @@
 import { useEffect, useState } from "react";
 import "./BookIntro.css";
 
-export default function BookIntro({ onOpen, featuredRecipe }) {
-  const [isOpening, setIsOpening] = useState(false);
+export default function BookIntro({ onOpen }) {
+  const [isLeaving, setIsLeaving] = useState(false);
 
   useEffect(() => {
-    if (!isOpening) return;
+    if (!isLeaving) return;
 
     const timer = setTimeout(() => {
       onOpen();
-    }, 1250);
+    }, 500);
 
     return () => clearTimeout(timer);
-  }, [isOpening, onOpen]);
-
-  const recipeImage = featuredRecipe?.image;
+  }, [isLeaving, onOpen]);
 
   return (
-    <main className={`book-intro ${isOpening ? "is-opening" : ""}`}>
-      <div className="intro-topline">
-        <span>THE RECIPEBOX JOURNAL</span>
-        <span>EST. 2026 · VOL. 01</span>
-      </div>
+    <main className={`editorial-intro ${isLeaving ? "is-leaving" : ""}`}>
+      {/* Decorative background details */}
+      <div className="editorial-orb editorial-orb-one" aria-hidden="true" />
+      <div className="editorial-orb editorial-orb-two" aria-hidden="true" />
 
-      <div className="book-stage">
-        {/* The pages visible behind the cover */}
-        <div className="book-spread">
-          <section className="book-page inside-left">
-            <span className="page-kicker">A NOTE FROM OUR KITCHEN</span>
+      {/* Header */}
+      <header className="editorial-header">
+        <a className="editorial-logo" href="#home" aria-label="RecipeBox home">
+          RecipeBox<span>.</span>
+        </a>
 
-            <h1>
-              Good food.
-              <br />
-              Slow moments.
-              <br />
-              <em>Beautiful memories.</em>
-            </h1>
+        <span className="editorial-header-label">
+          THE ART OF EVERYDAY COOKING
+        </span>
 
-            <div className="page-divider" />
+        <span className="editorial-edition">
+          EST. 2026
+        </span>
+      </header>
 
-            <p>
-              Welcome to RecipeBox, a little corner for discovering
-              delicious recipes, gathering around the table, and
-              finding joy in everyday cooking.
-            </p>
-
-            <span className="page-signature">
-              Made with love, RecipeBox
-            </span>
-
-            <span className="page-number">01</span>
-          </section>
-
-          <section className="book-page inside-right">
-            {recipeImage && (
-              <img
-                src={recipeImage}
-                alt={featuredRecipe?.name || "Featured recipe"}
-              />
-            )}
-
-            <div className="inside-recipe-caption">
-              <span>ON THE MENU</span>
-              <h2>
-                {featuredRecipe?.name || "Something delicious"}
-              </h2>
-              <p>
-                A little inspiration for your next kitchen adventure.
-              </p>
-            </div>
-
-            <span className="page-number">02</span>
-          </section>
+      {/* Main brand introduction */}
+      <section className="editorial-main">
+        <div className="editorial-overline">
+          <span className="editorial-line" />
+          A LITTLE SPACE FOR FOOD LOVERS
+          <span className="editorial-line" />
         </div>
 
-        {/* The front cover */}
-        <div className="book-cover">
-          <div className="cover-content">
-            <span className="cover-edition">
-              A COLLECTION OF EVERYDAY DELIGHTS
-            </span>
+        <div className="editorial-heading">
+          <span className="editorial-pretitle">WELCOME TO</span>
 
-            <div className="cover-emblem">✳</div>
+          <h1>
+            Recipe<span>Box</span>
+            <i>.</i>
+          </h1>
 
-            <h2>RecipeBox</h2>
-
-            <span className="cover-subtitle">
-              THE ART OF GOOD FOOD
-            </span>
-
-            <div className="cover-line" />
-
-            <p>
-              Recipes to make,
-              <br />
-              moments to savour.
-            </p>
-
-            <span className="cover-bottom">
-              OPEN YOUR KITCHEN
-            </span>
+          <div className="editorial-flower" aria-hidden="true">
+            ✳
           </div>
         </div>
-      </div>
 
-      <div className="intro-bottom">
-        <span>FRESH IDEAS · FAMILIAR FLAVOURS</span>
+        <p className="editorial-description">
+          Discover delicious recipes, find inspiration
+          <br className="desktop-break" />
+          in everyday ingredients, and make every
+          <br className="desktop-break" />
+          moment around the table a little more special.
+        </p>
+
+        <div className="editorial-divider">
+          <span />
+          <span className="editorial-divider-flower">✿</span>
+          <span />
+        </div>
+
+        <p className="editorial-tagline">
+          GOOD FOOD. GOOD MOOD. GOOD MEMORIES.
+        </p>
 
         <button
           type="button"
-          className="open-book-button"
-          onClick={() => setIsOpening(true)}
-          disabled={isOpening}
+          className="editorial-explore-button"
+          onClick={() => setIsLeaving(true)}
+          disabled={isLeaving}
         >
-          {isOpening ? "Opening your journal..." : "Open the book"}
-          <span aria-hidden="true"> ↗</span>
+          <span>{isLeaving ? "Welcome to RecipeBox..." : "Explore recipes"}</span>
+          <span className="editorial-arrow" aria-hidden="true">↗</span>
         </button>
+      </section>
 
+      {/* Footer */}
+      <footer className="editorial-footer">
+        <span>MADE WITH LOVE, FOR THE LOVE OF FOOD</span>
+        <span className="editorial-footer-symbol">✳</span>
         <span>COOK · CREATE · SHARE</span>
-      </div>
+      </footer>
+
+      <span className="editorial-side-label" aria-hidden="true">
+        YOUR EVERYDAY RECIPE JOURNAL
+      </span>
     </main>
   );
 }

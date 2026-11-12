@@ -1,46 +1,35 @@
 # 🌿 RecipeBox | A Digital Cookbook
 
-A beautifully designed, interactive digital cookbook built with React.js and Vite. Explore recipes, discover ingredients, and share your own culinary creations through a modern cookbook-inspired experience.
+RecipeBox is a botanical-inspired digital cookbook built with React and Vite. Browse a collection of recipes, find ideas by ingredient or category, save favourites, and add your own recipes to your browser's local collection.
 
 ## ✨ Features
 
-### 📖 Interactive Cookbook
-- Book-inspired opening animation.
-- Premium botanical design.
-- Responsive layout.
+### Editorial welcome
+- Full-screen welcome screen with a subtle opening transition.
+- Responsive, cookbook-inspired design.
 
-### 🍲 Recipe Collection
-- Browse a collection of recipes.
-- View recipe details and ingredients.
-- Veg and Non-Veg identification.
-- Explore different recipe categories.
+### Recipe collection
+- Browse recipe cards, ingredients, cooking times, and recipe details.
+- Explore categories and identify vegetarian and non-vegetarian recipes.
+- Search by recipe name, category, ingredients, or instructions.
+- Combine search with category, dietary, and favourites filters.
+- Save and remove favourites for the current browsing session.
+- Clear filters and get feedback when no recipes match.
 
-### 🔍 Search & Filters
-- Search recipes.
-- Search by recipe ingredients.
-- Filter by category.
-- Filter Veg and Non-Veg recipes.
+### Share a recipe
+- Submit a recipe with its category, cooking time, dietary preference, ingredients, and instructions.
+- Upload and preview a JPG, PNG, or WebP photo, or use the default image.
+- View submitted recipes in the collection and delete them with confirmation.
 
-### 📝 Share Your Recipe
-- Submit your own recipes.
-- Add recipe name, category and cooking time.
-- Include ingredients and cooking instructions.
-- Upload a food photograph or publish without one.
-- Preview uploaded photographs.
-- Display a default image when no photograph is provided.
-- See newly submitted recipes in the collection.
-- Delete locally submitted recipes with confirmation.
+### Local browser storage
+- Community recipes are saved in `localStorage` and remain available after a refresh in the same browser.
+- No backend or database is required.
 
-### 💾 Browser Storage
-- Save community recipes locally.
-- Retain saved recipes after refreshing the browser.
-- No backend or database required.
+> **Note:** Community recipes and uploaded photos are stored only in the visitor's browser. They are not shared across devices or with other visitors. Favourites are not persisted after a page refresh.
 
-**Note:** Community recipes are stored locally in the visitor's browser and are not automatically shared across devices or with other visitors.
+## 🎨 Design palette
 
-## 🎨 Design Palette
-
-| Colour | Hex Code |
+| Colour | Hex code |
 |---|---|
 | Sage Green | `#82977C` |
 | Deep Forest | `#344B38` |
@@ -50,21 +39,67 @@ A beautifully designed, interactive digital cookbook built with React.js and Vit
 
 ## 🛠️ Technologies
 
-- React.js
+- React and React Hooks
 - Vite
-- JavaScript
-- HTML5
-- CSS3
-- React Hooks
-- Browser Storage
+- JavaScript (ES6+)
+- HTML5 and CSS3
+- Browser `localStorage`
 
-## 📂 Project Structure
+## 🚀 Getting started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) and npm
+- Git
+
+### Installation
+
+```bash
+git clone https://github.com/Ankita13068/recipebox.git
+cd recipebox
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite in your browser.
+
+### Available scripts
+
+```bash
+npm run dev      # Start the development server
+npm run build    # Create a production build
+npm run preview  # Preview the production build
+npm run lint     # Run ESLint
+```
+
+## 📸 Screenshots
+
+### Editorial welcome
+![RecipeBox editorial welcome screen](screenshots/book-intro.png)
+
+### Laptop homepage
+![RecipeBox homepage at laptop size](screenshots/homepage.png)
+
+### Recipe collection
+![Recipe collection and filters](screenshots/recipe-collection.png)
+
+### Recipe details
+![Recipe details](screenshots/recipe-details.png)
+
+### Share a recipe
+![Share a recipe form](screenshots/share-recipe.png)
+
+### Community recipes
+![Community recipes in the collection](screenshots/community-recipes.png)
+
+## 📂 Project structure
 
 ```text
 recipebox/
 ├── public/
 │   ├── favicon.svg
 │   └── icons.svg
+├── screenshots/
 ├── src/
 │   ├── assets/
 │   ├── components/
@@ -72,9 +107,9 @@ recipebox/
 │   │   ├── BookIntro.jsx
 │   │   ├── header.jsx
 │   │   ├── IngredientList.jsx
-│   │   ├── recipecard.jsx
 │   │   ├── RecipeDetails.css
 │   │   ├── RecipeDetails.jsx
+│   │   ├── recipecard.jsx
 │   │   ├── ShareRecipe.css
 │   │   └── ShareRecipe.jsx
 │   ├── data/
@@ -84,91 +119,25 @@ recipebox/
 │   ├── app.jsx
 │   ├── index.css
 │   └── main.jsx
-├── .gitignore
 ├── eslint.config.js
 ├── index.html
-├── package-lock.json
 ├── package.json
-├── README.md
+├── package-lock.json
 └── vite.config.js
 ```
 
-## 🚀 Getting Started
+## 🎯 Project objective
 
-### Prerequisites
-- Node.js
-- npm
+RecipeBox is a hands-on React project exploring component-based development, state and props, hooks, dynamic rendering, search and filtering, form handling, browser storage, and responsive design.
 
-### Installation
+## 🌱 Future improvements
 
-**1. Clone the repository**
-
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-**2. Navigate to the project folder**
-
-```bash
-cd recipebox
-```
-
-**3. Install dependencies**
-
-```bash
-npm install
-```
-
-**4. Start the development server**
-
-```bash
-npm run dev
-```
-
-Open the local URL displayed in your terminal.
-
-## 📸 Screenshots
-
-These screenshots are saved in the [`screenshots/`](screenshots/) folder and
-embedded below so they display in the repository README.
-
-### Cookbook opening
-![RecipeBox cookbook opening](screenshots/book-intro.png)
-
-### Desktop homepage
-![RecipeBox full-screen laptop homepage](screenshots/homepage.png)
-
-### Recipe collection
-![Recipe collection](screenshots/recipe-collection.png)
-
-### Recipe details
-![Recipe details](screenshots/recipe-details.png)
-
-### Share a recipe
-![Share a recipe](screenshots/share-recipe.png)
-
-### Community recipe
-![Community recipe in the collection](screenshots/community-recipes.png)
-
-## 🎯 Project Objective
-
-RecipeBox was created to explore React.js development through an interactive digital cookbook.
-
-The project demonstrates component-based architecture, reusable components, props, state management, dynamic rendering, search and filtering, form handling and browser-based data persistence.
-
-## 🌱 Future Improvements
-
-- Recipe ratings and reviews.
-- Favourite recipes.
-- Advanced recipe discovery.
-- Shared community recipe collections.
+- Persist favourites between visits.
+- Add recipe ratings and reviews.
+- Provide more discovery and sorting options.
+- Add shared collections with a backend and user accounts.
 
 ## 👩‍💻 Author
 
-**Ankita**
-
-Frontend Development Project
-
----
-
+**Ankita** · Frontend Development Project
 *Made with 🌿 and a love for good food.*

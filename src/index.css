@@ -28,9 +28,14 @@
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
@@ -39,7 +44,7 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: 0;
   min-height: 100vh;
   background: var(--soft-white);
   color: var(--text-dark);
